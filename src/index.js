@@ -1,12 +1,7 @@
-import generateJoke from './generateJoke';
 import './styles/main.scss';
-import laughing from './assets/laughing.svg';
+import { setEventListeners } from './eventListeners';
 
-const laughImg = document.getElementById('laughImg');
-laughImg.src = laughing;
+document.addEventListener('DOMContentLoaded', () => {
+    setEventListeners();
 
-const jokeBtn = document.getElementById('jokeBtn');
-
-jokeBtn.addEventListener('click', generateJoke);
-
-// generateJoke();
+});

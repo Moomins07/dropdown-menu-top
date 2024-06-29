@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-$primary-color: #2fa8cc;
+$primary-color: #383838;
 $secondary-color: #f4f4f4;
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
@@ -67,4 +67,15 @@ img {
   &:focus {
     outline: 0;
   }
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust based on button height */
+  left: 0;
+  background-color: rgb(155, 39, 39);
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
 }
