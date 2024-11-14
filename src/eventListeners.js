@@ -2,7 +2,7 @@ import { displayDropDownMenu } from "./dropDownMenu"
 
 function setEventListeners() {
     document.querySelectorAll('.dropdown-btn').forEach((btn) => {
-        btn.addEventListener('mouseenter', displayDropDownMenu)
+        btn.addEventListener('click', displayDropDownMenu)
     })
 
 }

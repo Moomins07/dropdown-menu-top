@@ -1,3 +1,4 @@
+const webpack = require('webpack'); // <-- Add this line if it's missing
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin =
@@ -21,9 +22,9 @@ module.exports = {
     },
     port: 3000,
     open: true,
-    hot: true,
+    hot: false,
     compress: true,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -48,6 +49,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'Webpack App',
       filename: 'index.html',

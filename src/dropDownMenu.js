@@ -1,11 +1,6 @@
-
-
 function displayDropDownMenu() {
-    const dropdownMenu = document.createElement('div');
-    dropdownMenu.className = 'dropdown-menu';
-    dropdownMenu.innerText = 'This is a dropdown menu';
-    document.body.appendChild(dropdownMenu);
-
+    const dropDownContainer = document.querySelector('.dropdown-container');
+    dropDownContainer.classList.toggle('show');  // Toggle the show class to animate max-height
 }
 
-export { displayDropDownMenu }
+export { displayDropDownMenu };

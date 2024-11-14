@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 $primary-color: #383838;
 $secondary-color: #f4f4f4;
@@ -78,4 +81,41 @@ img {
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 1000;
+}
+
+.list-none {
+  list-style-type: none;
+}
+
+.dropdown-menu-selected {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 0;
+  font-size: medium;
+  max-width: 50%;
+  display: none;
+}
+
+.dropdown-menu-selected > *:not(hr) {
+  cursor: pointer;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 64px;
+  max-height: 0; /* Initially collapsed */
+  overflow: hidden; /* Hide overflow content */
+  transition: max-height 0.3s ease-out; /* Smooth transition */
+}
+
+.dropdown-container.show {
+  max-height: 500px; /* Set a large max-height value */
+}
+
+.hide {
+  display: none;
 }
