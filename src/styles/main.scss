@@ -32,6 +32,7 @@ body {
   text-align: center;
   max-width: 100%;
   width: 800px;
+  height: 400px;
 }
 
 h3 {
@@ -51,6 +52,7 @@ img {
   line-height: 40px;
   margin: 50px auto;
   max-width: 600px;
+  position: relative;
 }
 
 .btn {
@@ -92,21 +94,26 @@ img {
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 0;
+  padding: 20px;
   font-size: medium;
-  max-width: 50%;
-  display: none;
+  width: 200px;
 }
 
 .dropdown-menu-selected > *:not(hr) {
   cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: rgb(62, 106, 147);
+  }
 }
 
 .dropdown-container {
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px 64px;
+  padding: 0;
   max-height: 0; /* Initially collapsed */
   overflow: hidden; /* Hide overflow content */
   transition: max-height 0.3s ease-out; /* Smooth transition */
