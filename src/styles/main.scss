@@ -32,7 +32,7 @@ body {
   text-align: center;
   max-width: 100%;
   width: 800px;
-  height: 400px;
+  height: fit-content;
 }
 
 h3 {
@@ -125,4 +125,113 @@ img {
 
 .hide {
   display: none;
+}
+
+// CAROUSEL
+
+.carousel-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+
+  .carousel-frame {
+    height: 24rem;
+    display: flex; /* Optional for layout */
+    width: 24rem;
+    background-color: rgba(0, 0, 0, 0.088);
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+
+    .carousel-img-container {
+      height: 100%;
+      width: 100%; /* Optional for ensuring container spans full width */
+
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure buttons are on top */
+}
+
+.carousel-button:before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.carousel-button.left {
+  left: 10px; /* Position for the left button */
+}
+
+.carousel-button.left:before {
+  transform: rotate(135deg); /* Flip arrow direction */
+}
+
+.carousel-button.right {
+  right: 10px; /* Position for the right button */
+}
+
+.carousel-button.right:before {
+  transform: rotate(-45deg); /* Arrow pointing right */
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
